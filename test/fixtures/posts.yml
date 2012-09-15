@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  event: 2012-09-10
+  district: 1
+  units: 1
+  people: 1
+  name: MyString
+  email: MyString
+
+two:
+  event: 2012-09-10
+  district: 1
+  units: 1
+  people: 1
+  name: MyString
+  email: MyString

@@ -1,0 +1,33 @@
+<h1>Listing Roundtable Reports</h1>
+<hr>
+<table class="table table-bordered table-striped">
+  <tr>
+    <th>Event</th>
+    <th>Date</th>
+    <th>District</th>
+    <th>Units</th>
+    <th>People</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.event_name %></td>
+    <td><%= post.held_at %></td>
+    <td><%= post.district_id %></td>
+    <td><%= post.units %></td>
+    <td><%= post.people %></td>
+    <td><%= post.user_name %></td>
+    <td><%= post.user_email %></td>
+    <td><%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-success' %></td>
+    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Post', new_post_path, :class => 'btn btn-primary' %>

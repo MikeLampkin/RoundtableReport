@@ -1,0 +1,85 @@
+<%= form_for @post, :html => { :class => 'form-horizontal' } do |f| %>
+
+
+<% if @post.errors.any? %>
+<div id="error_explanation">
+	<h2>
+<%= pluralize(@post.errors.count, "error") %>
+		prohibited this post from being saved:
+	</h2>
+	<ul>
+
+<% @post.errors.full_messages.each do |msg| %>
+		<li class="text-error"><%= msg %>
+		</li>
+<% end %>
+	</ul>
+</div>
+<% end %>
+<table class="table table-striped table-bordered span6 offset3">
+	<tr>
+		<td class="control-group" width="25%"> 
+<%= f.label :event_name, :class => 'control-label' %>
+		</td>
+		<td class="controls"> 
+      <%= f.select :event_name, ROUNDTABLE_TYPES, :class => 'text_field' %>
+		</td>
+	</tr>
+	<tr>
+		<td class="control-group"> 
+<%= f.label :held_at, :class => 'control-label' %>
+		</td>
+		<td class="controls"> 
+      <%= f.date_select :held_at, {:include_blank => true}, :class => 'datetime_select' %>
+		</td>
+	</tr>
+<tr>
+	<td class="control-group"> 
+<%= f.label :district_id, :class => 'control-label' %>
+	</td>
+	<td class="controls"> 
+<%= f.number_field :district_id, :class => 'text_field' %>
+	</td>
+</tr>
+
+	<tr>
+	<td class="control-group"> 
+<%= f.label :units, :class => 'control-label' %>
+	</td>
+	<td class="controls"> 
+<%= f.number_field :units, :class => 'text_field', :placeholder => 'Number of units in attendance.' %>
+	</td>
+</tr>
+<tr>
+	<td class="control-group"> 
+<%= f.label :people, :class => 'control-label' %>
+	</td>
+	<td class="controls"> 
+<%= f.number_field :people, :class => 'text_field', :placeholder => 'Number of people in attendance.' %>
+	</td>
+</tr>
+<tr>
+	<td class="control-group"> 
+<%= f.label :user_name, :class => 'control-label' %>
+	</td>
+	<td class="controls"> 
+<%= f.text_field :user_name, :class => 'text_field', :placeholder => 'Your name.' %>
+	</td>
+</tr>
+<tr>
+	<td class="control-group"> 
+<%= f.label :user_email, :class => 'control-label' %>
+	</td>
+	<td class="controls"> 
+<%= f.text_field :user_email, :class => 'text_field', :placeholder => 'Your email.' %>
+	</td>
+</tr>
+<tr>
+	<td colspan="2" class="actions"><center>
+<%= f.submit nil, :class => 'btn btn-primary' %>
+<%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                posts_path, :class => 'btn' %>
+	</td>
+</tr>
+</table>
+<% end %>

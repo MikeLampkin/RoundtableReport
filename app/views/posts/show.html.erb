@@ -1,0 +1,37 @@
+<h2 id="notice"><%= notice %></h2>
+<hr>
+<table class="table table-striped table-bordered span6 offset3">
+  <tr><td>Event:</td>
+  <td><%= @post.event_name %></td>
+</tr>
+
+  <tr><td>Date:</td>
+  <td><%= @post.held_at %></td>
+</tr>
+
+
+  <tr><td>District:</td>
+  <td><%= @post.district_id %></td>
+</tr>
+
+  <tr><td>Units:</td>
+  <td><%= @post.units %></td>
+</tr>
+
+  <tr><td>People:</td>
+  <td><%= @post.people %></td>
+</tr>
+
+  <tr><td>Name:</td>
+  <td><%= @post.user_name %></td>
+</tr>
+
+  <tr><td>Email:</td>
+  <td><%= @post.user_email %></td>
+</tr>
+
+<tr><td colspan="2" style="text-align:center;">
+<%= link_to 'Edit', edit_post_path(@post), :class => 'btn btn-primary' %> |
+<%= link_to 'Back', posts_path, :class => 'btn btn-primary' %>
+</td></tr>
+</table>
