@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  abbv: MyString
+  division: MyString
+  created_at: 2012-09-15 14:13:12
+  updated_at: 2012-09-15 14:13:12
+
+two:
+  name: MyString
+  abbv: MyString
+  division: MyString
+  created_at: 2012-09-15 14:13:12
+  updated_at: 2012-09-15 14:13:12

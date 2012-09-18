@@ -26,14 +26,25 @@
           </a>
           <%= link_to root_path, :class=> 'brand' do %><%= image_tag 'commissioner_wreath_80x80.png', :height => '20px', :width => '20px'  %> Sam Houston Area Council : Commissioners<% end %>
           <div class="container nav-collapse">
+             <% if current_user && current_user.admin? %>
             <ul class="nav">
               <li><%= link_to "Posts", posts_path  %></li>
-              <li><%= link_to "My Reports", posts_path %></li>
+              <li><%= link_to "Users", users_path %></li>
             </ul>
+              <% end %>
+
             <ul class="nav pull-right">
+               <% if current_user %>
               <li class="dropdown">
+                <a class="dropdown-toggle" href="#"><%= current_user.email %></a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                  <li><%= link_to 'Profile', current_user  %></li>
+                  <li><%= link_to 'Logout', logout_url  %></li>
                 </ul>
               </li>
+              <% else %>
+              <li><%= link_to "Admin", login_path  %></li>
+              <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

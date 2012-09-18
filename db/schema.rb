@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120915030430) do
+ActiveRecord::Schema.define(:version => 20120915194820) do
+
+  create_table "districts", :force => true do |t|
+    t.string   "name"
+    t.string   "abbv"
+    t.string   "division"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "posts", :force => true do |t|
     t.date     "held_at"
@@ -23,6 +31,17 @@ ActiveRecord::Schema.define(:version => 20120915030430) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "event_name"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.boolean  "admin"
+    t.boolean  "active"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.integer  "district_id",     :limit => 255
+    t.string   "integer"
   end
 
 end

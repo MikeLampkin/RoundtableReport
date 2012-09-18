@@ -1,3 +1,5 @@
-class District < ActiveResource::Base
-  self.site = "http://api.oa-elections.dev/:3000/"
+class District < ActiveRecord::Base
+  self.site = "http://localhost:3000/"
+  self.element_name = "district_id"
+
 end

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  email: MyString
+  password_digest: MyString
+  admin: false
+  active: false
+  created_at: 2012-09-15 14:13:29
+  updated_at: 2012-09-15 14:13:29
+  district_id: MyString
+  integer: MyString
+
+two:
+  email: MyString
+  password_digest: MyString
+  admin: false
+  active: false
+  created_at: 2012-09-15 14:13:29
+  updated_at: 2012-09-15 14:13:29
+  district_id: MyString
+  integer: MyString
