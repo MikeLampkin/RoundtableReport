@@ -34,13 +34,12 @@
 		</td>
 	</tr>
 <tr>
-	<td class="control-group"> 
-<%= f.label :district_id, :class => 'control-label' %>
-	</td>
-	<td class="controls"> 
-<%= f.number_field :district_id, :class => 'text_field' %>
-	</td>
-</tr>
+  <td class="control-group">
+    <%= f.label :district_id, :class => 'control-label' %>
+    </td><td class="controls">
+    <%=f.select :district_id, options_from_collection_for_select(District.order('name ASC'), 'id', 'name', @post.district_id), :include_blank => true, :class => 'text_field' %>
+    </td>
+  </tr>
 
 	<tr>
 	<td class="control-group"> 

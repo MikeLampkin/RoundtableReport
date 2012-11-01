@@ -1,10 +1,15 @@
 <h1>Listing Roundtable Reports</h1>
 <hr>
+
+<%- model_class = Post -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %>
+  <head_sub> </head_sub></h1>
+</div>
+
+        <td><%= post.this_district %></td>
 <table class="table table-bordered table-striped">
   <tr>
-    <th>Event</th>
-    <th>Date</th>
-    <th>District</th>
     <th>Units</th>
     <th>People</th>
     <th>Name</th>
@@ -13,11 +18,9 @@
     <th></th>
   </tr>
 
+
 <% @posts.each do |post| %>
   <tr>
-    <td><%= post.event_name %></td>
-    <td><%= post.held_at %></td>
-    <td><%= post.district_id %></td>
     <td><%= post.units %></td>
     <td><%= post.people %></td>
     <td><%= post.user_name %></td>
@@ -26,6 +29,7 @@
     <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
   </tr>
 <% end %>
+
 </table>
 
 <br />

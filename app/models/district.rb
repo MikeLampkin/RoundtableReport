@@ -1,5 +1,7 @@
 class District < ActiveRecord::Base
-  self.site = "http://localhost:3000/"
-  self.element_name = "district_id"
+  attr_accessible :abbv, :division, :name
+  
+  has_many :posts
+  has_many :users
 
 end

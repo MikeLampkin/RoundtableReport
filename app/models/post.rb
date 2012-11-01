@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  belongs_to :district
 
   attr_accessible :event_name, :held_at, :district_id, :units, :people, :user_name, :user_email
 
@@ -8,6 +9,18 @@ class Post < ActiveRecord::Base
   validates :user_email, :presence => true
   
 
+  def held_on
+    held_at.to_date
+  end
+
+  def roundtable
+    District.name + " " + self.event_name
+  end
+
+
+  def this_district
+    District.name
+  end
   
   def complete?
     event_name.present? &&
