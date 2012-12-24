@@ -31,7 +31,11 @@
 </tr>
 
 <tr><td colspan="2" style="text-align:center;">
-<%= link_to 'Edit', edit_post_path(@post), :class => 'btn btn-primary' %> |
-<%= link_to 'Back', posts_path, :class => 'btn btn-primary' %>
+<%= link_to 'Edit', edit_post_path(@post), :class => 'btn btn-primary' %>
+      <% if current_user %>
+ | <%= link_to 'Back', posts_path, :class => 'btn btn-primary' %>
+      <% else %>
+ | <%= link_to 'Done', new_post_path, :class => 'btn btn-primary' %>
+      <% end %>
 </td></tr>
 </table>

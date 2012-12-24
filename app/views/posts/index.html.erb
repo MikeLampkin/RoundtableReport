@@ -7,9 +7,9 @@
   <head_sub> </head_sub></h1>
 </div>
 
-        <td><%= post.this_district %></td>
 <table class="table table-bordered table-striped">
   <tr>
+    <th>District</th>
     <th>Units</th>
     <th>People</th>
     <th>Name</th>
@@ -21,6 +21,7 @@
 
 <% @posts.each do |post| %>
   <tr>
+    <td><%= post.district_id %><%= post.this_district %></td>
     <td><%= post.units %></td>
     <td><%= post.people %></td>
     <td><%= post.user_name %></td>
